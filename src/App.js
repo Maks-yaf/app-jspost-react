@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import './styles/App.css'
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -24,6 +24,10 @@ function App() {
         setPosts(response.data)
     }
 
+    useEffect(() => {
+            fetchPosts()
+    }, []);
+
 
 
 
@@ -33,7 +37,6 @@ function App() {
 
     return (
         <div className="App">
-            <MyButton onClick={fetchPosts} >Get Posts</MyButton>
             <MyButton style={{marginTop: '30px'}} onClick={() => setModal(true)}>
                 Add Post
             </MyButton>
