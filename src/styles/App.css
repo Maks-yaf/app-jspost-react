@@ -34,6 +34,11 @@
     transform: translateX(0px);
     transition: all 500ms ease-in;
 }
+
+.post_btn {
+    display: flex;
+}
+
 .post-exit {
     opacity: 1;
 }

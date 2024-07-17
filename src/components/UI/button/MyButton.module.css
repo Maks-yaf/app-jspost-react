@@ -1,10 +1,10 @@
 .muBtn {
-    padding: 5px 5px;
+    padding: 3px 3px;
     color: teal;
     font-size: 14px;
     background: transparent;
     border: 1px solid teal;
     cursor: pointer;
     width: 90px;
-    margin: 0 5px;
+    margin: 0 2px;
 }
