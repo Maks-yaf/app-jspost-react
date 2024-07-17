@@ -25,18 +25,12 @@ const PostIdPage = () => {
         fetchComments(params.id)
     }, []);
 
-    console.log(comments)
-    debugger
-
-
-
-
     return (
         <div>
             <h1>Post page ID = {params.id}</h1>
             {isLoading
-                ? <Loader/>
-                :
+                ? <div style={{justifyContent: "center", margin: 30}}> <Loader/> </div>
+                    :
                 <div>
                     <div> {post.id}. {post.title}</div>
                     <div> {post.body}</div>
@@ -47,10 +41,10 @@ const PostIdPage = () => {
             </h1>
             <div>
                 {isComLoading
-                ? <Loader/>
+                ? <div style={{justifyContent: "center", margin: 30}}> <Loader/> </div>
                 : <div>
-                        {comments.map( comment =>
-                            <div style={{marginTop: 15}}>
+                        {comments.map( (comment, index) =>
+                            <div style={{marginTop: 15}} key={index}>
                                 <h4>User name: {comment.name}</h4>
                                 <h5>User email: {comment.email}</h5>
                                 <div>{comment.body}</div>
